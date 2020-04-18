@@ -1123,18 +1123,28 @@ dmtsai lines: 5 columns: 9
 
 ```sh
 # ps -l
+  UID   PID  PPID        F CPU PRI NI       SZ    RSS WCHAN     S             ADDR TTY           TIME CMD
+  501 50901 50900     4006   0  31  0  4296528    808 -      S                   0 ttys001    0:00.16 -bash
 ```
 
 示例：查看系统所有进程
 
 ```sh
 # ps aux
+
+pc-78-237:CS-Notes effy$ ps aux | head
+USER               PID  %CPU %MEM      VSZ    RSS   TT  STAT STARTED      TIME COMMAND
+_windowserver      233  23.1  0.5  8486764  40620   ??  Ss   22 320  1959:16.66 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer -daemon
+effy             95761  13.8  0.7  5640896  61792   ??  S    三12上午 248:46.25 /Applications/Microsoft Teams.app/Contents/MacOS/Teams --updateSucceeded a456ef5e-d7d2-4312-9458-9287851a47ec
 ```
+
 
 示例：查看特定的进程
 
 ```sh
 # ps aux | grep threadx
+pc-78-237:CS-Notes effy$ ps aux | grep threadx
+effy             66238   0.0  0.0  4287496    856 s001  S+    7:41上午   0:00.01 grep threadx
 ```
 
 ### 2. pstree
@@ -1165,6 +1175,20 @@ dmtsai lines: 5 columns: 9
 
 ```sh
 # netstat -anp | grep port
+```
+
+
+```bash
+pc-78-237:CS-Notes effy$ netstat
+Active Internet connections
+Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)    
+tcp4       0      0  pc-78-237.custom.63281 lb-140-82-114-25.https ESTABLISHED
+tcp4       0      0  pc-78-237.custom.63276 lb-140-82-114-25.https ESTABLISHED
+tcp4       0      0  pc-78-237.custom.63268 52.114.77.171.https    ESTABLISHED
+tcp4      31      0  pc-78-237.custom.63267 113.80.205.35.bc.https CLOSE_WAIT 
+tcp4       0      0  pc-78-237.custom.63266 52.97.133.130.https    ESTABLISHED
+tcp4       0      0  pc-78-237.custom.63265 lhr48s21-in-f1.1.https ESTABLISHED
+tcp4       0      0  pc-78-237.custom.63263 lb-140-82-118-5-.https ESTABLISHED
 ```
 
 ## 进程状态
@@ -1258,7 +1282,3 @@ options 参数主要有 WNOHANG 和 WUNTRACED 两个选项，WNOHANG 可以使 w
 
 
 
-
-
-
-<div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/githubio/公众号二维码-2.png"></img></div>
