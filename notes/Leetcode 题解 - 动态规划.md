@@ -531,6 +531,28 @@ private int binarySearch(int[] tails, int len, int key) {
 }
 ```
 
+```python
+
+  for n in nums:
+      if not dp or n > dp[-1]:
+          dp.append(n)
+      else:
+          l,r = 0, len(dp)-1
+
+          loc = r
+          while l <= r:
+              mid = (l+r)//2
+
+              if dp[mid] < n:
+                  l = mid +1
+                 # loc = mid
+              else:
+                  loc = mid
+                  r = mid -1
+          dp[loc] = n
+  return len(dp)
+```
+
 ## 2. 一组整数对能够构成的最长链
 
 646\. Maximum Length of Pair Chain (Medium)
